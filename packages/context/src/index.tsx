@@ -2,7 +2,9 @@ import { createContext, useContext, useState } from 'react'
 
 type FieldContextData = {
   id: string
+  label: string
   setId: (id: string) => void
+  setLabel: (label: string) => void
 }
 
 type FieldContextProviderProps = {
@@ -15,9 +17,10 @@ export const FieldContextProvider: React.FC<FieldContextProviderProps> = ({
   children,
 }) => {
   const [id, setId] = useState('')
+  const [label, setLabel] = useState('')
 
   return (
-    <FieldContext.Provider value={{ id, setId }}>
+    <FieldContext.Provider value={{ id, label, setId, setLabel }}>
       {children}
     </FieldContext.Provider>
   )
