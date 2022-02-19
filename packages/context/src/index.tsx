@@ -7,15 +7,13 @@ type FieldContextData = {
   setLabel: (label: string) => void
 }
 
-type FieldContextProviderProps = {
+type RootProps = {
   children: React.ReactNode
 }
 
 const FieldContext = createContext({} as FieldContextData)
 
-export const FieldContextProvider: React.FC<FieldContextProviderProps> = ({
-  children,
-}) => {
+export const Root: React.FC<RootProps> = ({ children }) => {
   const [id, setId] = useState('')
   const [label, setLabel] = useState('')
 

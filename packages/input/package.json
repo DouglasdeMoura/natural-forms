@@ -4,8 +4,12 @@
   "description": "Unstyled input component with built-in validation.",
   "license": "MIT",
   "author": "Douglas Moura <douglas.ademoura@gmail.com>",
+  "main": "./src/index.tsx",
+  "types": "./src/index.tsx",
   "dependencies": {
     "@natural-forms/context": "*",
+    "@natural-forms/error": "*",
+    "@natural-forms/label": "*",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

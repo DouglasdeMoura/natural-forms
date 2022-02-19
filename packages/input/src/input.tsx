@@ -1,17 +1,9 @@
 import { forwardRef, useEffect } from 'react'
 
-import { FieldContextProvider, useFieldContext } from '@natural-forms/context'
+import { Root as RootComponent, useFieldContext } from '@natural-forms/context'
+import { Error as ErrorComponent } from '@natural-forms/error'
+import { Label as LabelComponent } from '@natural-forms/label'
 import { camelCase } from 'lodash'
-
-type RootProps = {
-  children?: React.ReactNode
-}
-
-export const Root: React.FC<RootProps> = ({ children, ...props }) => (
-  <FieldContextProvider>
-    <div {...props}>{children}</div>
-  </FieldContextProvider>
-)
 
 type InputProps = {
   custom?: (value: string) => boolean
@@ -22,7 +14,7 @@ type InputProps = {
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ ...props }, ref) => {
     const { setId, label } = useFieldContext()
-    typeof props
+
     const id = props?.id || camelCase(label)
     const name = props?.name || id
 
@@ -35,3 +27,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 )
 
 Input.displayName = 'Input'
+
+export const Label = LabelComponent
+
+export const Error = ErrorComponent
+
+export const Root = RootComponent
