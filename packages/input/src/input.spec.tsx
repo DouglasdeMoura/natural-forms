@@ -179,4 +179,56 @@ describe('<InputPrimitive.* />', () => {
 
     expect(onError).toHaveBeenCalled()
   })
+
+  it('should apply a mask to the value', () => {
+    const onValidate = jest.fn()
+
+    const mask = jest.fn().mockImplementation((value) =>
+      value
+        .replace(/\D+/g, '')
+        .replace(/(\d{2})(\d)/, '$1/$2')
+        .replace(/(\/\d{2})(\d)/, '$1/$2')
+        .replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3'),
+    )
+
+    render(
+      <Input
+        label="mock_label"
+        mask={mask}
+        inputMode="numeric"
+        pattern="\d{2}/\d{2}/\d{4}"
+        onValidate={onValidate}
+      />,
+    )
+
+    const input = screen.getByLabelText('mock_label') as HTMLInputElement
+
+    userEvent.type(input, '2')
+    expect(input).toHaveValue('2')
+
+    userEvent.type(input, '0')
+    expect(input).toHaveValue('20')
+
+    userEvent.type(input, '1')
+    expect(input).toHaveValue('20/1')
+
+    userEvent.type(input, '1')
+    expect(input).toHaveValue('20/11')
+
+    userEvent.type(input, '1')
+    expect(input).toHaveValue('20/11/1')
+
+    userEvent.type(input, '9')
+    expect(input).toHaveValue('20/11/19')
+
+    userEvent.type(input, '9')
+    expect(input).toHaveValue('20/11/199')
+
+    userEvent.type(input, '0')
+    expect(input).toHaveValue('20/11/1990')
+
+    userEvent.tab()
+
+    expect(onValidate).toHaveBeenCalledWith('20/11/1990')
+  })
 })

@@ -175,13 +175,17 @@ export const Label: React.FC<LabelProps> = ({ children, ...props }) => {
 
 type InputProps = {
   error?: ErrorMessages
+  mask?: (value?: string) => string
   custom?: (value: string) => boolean
   onError?: (value: string, errors: ValidationResult['errors']) => void
   onValidate?: (value?: string) => boolean
 } & React.ComponentPropsWithRef<'input'>
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ custom, error, onBlur, onChange, onError, onValidate, ...props }, ref) => {
+  (
+    { custom, error, mask, onBlur, onChange, onError, onValidate, ...props },
+    ref,
+  ) => {
     const { setId, label, setErrors, errors } = useFieldContext()
 
     const inputRef = useRef<HTMLInputElement>(null)
@@ -205,6 +209,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       onChange?.(e)
+
+      if (mask && typeof mask === 'function') {
+        inputRef!.current!.value = mask(e.target.value)
+      }
 
       if (errors) {
         setErrors(undefined)
