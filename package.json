@@ -10,6 +10,7 @@
     "form validation"
   ],
   "scripts": {
+    "lint": "turbo run lint",
     "prepare": "husky install"
   },
   "devDependencies": {
