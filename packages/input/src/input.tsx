@@ -102,11 +102,11 @@ type FieldContextData = {
 
 type RootProps = {
   children: React.ReactNode
-}
+} & React.HTMLAttributes<HTMLDivElement>
 
 const FieldContext = createContext({} as FieldContextData)
 
-export const Root: React.FC<RootProps> = ({ children }) => {
+export const Root: React.FC<RootProps> = ({ children, ...props }) => {
   const [id, setId] = useState('')
   const [label, setLabel] = useState('')
   const [errors, setErrors] = useState<ValidationResult['errors'] | undefined>()
@@ -122,7 +122,9 @@ export const Root: React.FC<RootProps> = ({ children }) => {
         setErrors,
       }}
     >
-      {children}
+      <div {...props} data-invalid={!!errors}>
+        {children}
+      </div>
     </FieldContext.Provider>
   )
 }
@@ -138,7 +140,11 @@ type ErrorProps = React.HTMLAttributes<HTMLParagraphElement>
 export const Error: React.FC<ErrorProps> = ({ ...props }) => {
   const { errors } = useFieldContext()
 
-  return errors ? <p {...props}>{errors[0].message}</p> : null
+  return errors ? (
+    <p {...props} data-error>
+      {errors[0].message}
+    </p>
+  ) : null
 }
 
 /**
@@ -150,14 +156,14 @@ type LabelProps = {
 } & React.HTMLAttributes<HTMLLabelElement>
 
 export const Label: React.FC<LabelProps> = ({ children, ...props }) => {
-  const { id, setLabel } = useFieldContext()
+  const { id, setLabel, errors } = useFieldContext()
 
   useEffect(() => {
     setLabel(children?.toString() || '')
   }, [children, setLabel])
 
   return (
-    <label htmlFor={id} {...props}>
+    <label htmlFor={id} {...props} data-invalid={!!errors}>
       {children}
     </label>
   )
@@ -213,6 +219,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       <input
         {...props}
         id={id}
+        data-invalid={!!errors}
         name={name}
         onBlur={handleOnBlur}
         onChange={handleOnChange}
