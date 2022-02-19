@@ -1,0 +1,17 @@
+{
+  "name": "@natural-forms/context",
+  "version": "0.0.1",
+  "description": "Utility to create a shared context for the fields.",
+  "license": "MIT",
+  "author": "Douglas Moura <douglas.ademoura@gmail.com>",
+  "main": "./src/index.tsx",
+  "types": "./src/index.tsx",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11"
+  }
+}
