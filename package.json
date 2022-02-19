@@ -1,0 +1,22 @@
+{
+  "name": "natural-forms",
+  "version": "0.0.1",
+  "description": "Unstyled form fields for React with built in validation.",
+  "author": "Douglas Moura <douglas.ademoura@gmail.com>",
+  "keywords": [
+    "form",
+    "input",
+    "form validation"
+  ],
+  "devDependencies": {
+    "turbo": "^1.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DouglasdeMoura/natural-forms"
+  },
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ]
+}
