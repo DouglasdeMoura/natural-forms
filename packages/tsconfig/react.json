@@ -15,9 +15,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "rootDir": "./packages"
-  },
-  "include": ["packages/**/*.ts", "packages/**/*.tsx"],
-  "exclude": ["node_modules", "**/*.spec.ts", "**/*.spec.tsx"]
+    "jsx": "react-jsx"
+  }
 }

@@ -1,0 +1,9 @@
+{
+  "name": "tsconfig",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Douglas Moura <douglas.ademoura@gmail.com>",
+  "files": [
+    "tsconfig.json"
+  ]
+}
