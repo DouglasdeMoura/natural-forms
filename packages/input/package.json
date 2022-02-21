@@ -1,7 +1,6 @@
 {
-  "name": "input",
-  "private": true,
-  "version": "0.0.1",
+  "name": "@natural-forms/input",
+  "version": "1.0.0",
   "description": "Unstyled input component with built-in validation.",
   "license": "MIT",
   "author": "Douglas Moura <douglas.ademoura@gmail.com>",
@@ -9,6 +8,9 @@
   "main": "dist/main.js",
   "module": "dist/module.js",
   "types": "dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "parcel build"
   },
