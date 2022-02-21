@@ -175,10 +175,10 @@ export const Label: React.FC<LabelProps> = ({ children, ...props }) => {
 
 type InputProps = {
   error?: ErrorMessages
-  mask?: (value?: string) => string
+  mask?: (value: string) => string
   custom?: (value: string) => boolean
   onError?: (value: string, errors: ValidationResult['errors']) => void
-  onValidate?: (value?: string) => boolean
+  onValidate?: (value: string) => void
 } & React.ComponentPropsWithRef<'input'>
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -204,7 +204,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         return
       }
 
-      onValidate?.(inputRef.current?.value)
+      onValidate?.(inputRef.current?.value || '')
     }
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
