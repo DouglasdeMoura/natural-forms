@@ -105,3 +105,6 @@ dist
 
 # Turbo
 .turbo
+
+# Parcel
+.parcel-cache
