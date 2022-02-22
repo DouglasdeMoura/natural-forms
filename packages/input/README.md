@@ -55,7 +55,7 @@ Accepts all props of a `div` element.
 
 ### Label
 
-The `label` element that should be used to describe the input. It's text is used
+The `label` element that should be used to describe the input. Its text is used
 to generate the `input`'s `id` and `name` attributes.
 
 Accepts all props of a `label` element.
@@ -68,7 +68,7 @@ If no `name` is provided, use the `id` attribute.
 
 Besides the props of the `input` element, it accepts the following props:
 
-- `onError`: receives a function that is called when the input is invalid. It receives the current input value and the list of erros;
+- `onError`: receives a function that is called when the input is invalid, which receives the current input value and the list of erros;
 - `onValidate`: receives a function that is called when the input is valid;
 - `custom`: receives a custom validation function that will be applied to the stack of validators;
 - `mask`: receives a function that applies a mask to the input's value.
