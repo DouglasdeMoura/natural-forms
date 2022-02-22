@@ -10,7 +10,8 @@ event.
 - Applies a mask to the input using a custom function passed to the `mask` prop;
 - Fires a `onError` event when the input is invalid;
 - Fires a `onValidate` event when the input is valid;
-- Input's `name` and `id` attributes are automatically generated when not provided.
+- Input's `name` and `id` attributes are automatically generated when not provided;
+- Compatible with any styling mwthod, as it exposes the HTML elements directly.
 
 ## Installation
 
