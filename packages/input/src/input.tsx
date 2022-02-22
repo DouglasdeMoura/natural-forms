@@ -129,7 +129,7 @@ export const Root: React.FC<RootProps> = ({ children, ...props }) => {
   )
 }
 
-export const useFieldContext = () => useContext(FieldContext)
+const useFieldContext = () => useContext(FieldContext)
 
 /**
  * Container to display the error message
