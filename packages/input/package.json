@@ -18,6 +18,10 @@
     "react",
     "typescript"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DouglasdeMoura/natural-forms"
+  },
   "scripts": {
     "build": "parcel build"
   },
