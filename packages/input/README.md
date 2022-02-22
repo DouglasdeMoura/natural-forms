@@ -20,7 +20,7 @@ Install with your preferred package manager:
 npm install @natural-forms/input
 ```
 
-o|r
+or
 
 ```
 yarn add @natural-forms/input
