@@ -148,7 +148,7 @@ export const Error: React.FC<ErrorProps> = ({ ...props }) => {
 }
 
 /**
- * Container to display the error message
+ * Label component
  */
 
 type LabelProps = {
