@@ -11,6 +11,13 @@
   "files": [
     "dist"
   ],
+  "tags": [
+    "input",
+    "form",
+    "validation",
+    "react",
+    "typescript"
+  ],
   "scripts": {
     "build": "parcel build"
   },
