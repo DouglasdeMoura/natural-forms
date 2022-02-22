@@ -155,15 +155,15 @@ type LabelProps = {
   children: React.ReactNode
 } & React.HTMLAttributes<HTMLLabelElement>
 
-export const Label: React.FC<LabelProps> = ({ children, ...props }) => {
-  const { id, setLabel, errors } = useFieldContext()
+export const Label: React.FC<LabelProps> = ({ children, id, ...props }) => {
+  const { id: inputId, setLabel, errors } = useFieldContext()
 
   useEffect(() => {
     setLabel(children?.toString() || '')
   }, [children, setLabel])
 
   return (
-    <label htmlFor={id} {...props} data-invalid={!!errors}>
+    <label htmlFor={id || inputId} {...props} data-invalid={!!errors}>
       {children}
     </label>
   )
