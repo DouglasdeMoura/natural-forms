@@ -41,6 +41,9 @@ export default () => {
 }
 ```
 
+Please refer to the [tests](https://github.com/DouglasdeMoura/natural-forms/blob/main/packages/input/src/input.spec.tsx) file
+in order to se a more complete example.
+
 ## API reference
 
 ### Root
