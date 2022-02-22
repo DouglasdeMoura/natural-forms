@@ -5,7 +5,7 @@ event.
 
 ## Features
 
-- Input validation that uses the (`ValidityState`)[https://developer.mozilla.org/en-US/docs/Web/API/ValidityState] interface;
+- Input validation that uses the [`ValidityState`](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) interface;
 - Custom validation using a validator function passed to the `custom` prop;
 - Applies a mask to the input using a custom function passed to the `mask` prop;
 - Fires a `onError` event when the input is invalid;
