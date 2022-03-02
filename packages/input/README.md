@@ -30,14 +30,14 @@ yarn add @natural-forms/input
 ## Anatomy
 
 ```tsx
-import * as Input from '@natural-forms/input'
+import * as InputPrimitive from '@natural-forms/input'
 
 export default () => {
-  <Input.Root>
-    <Input.Label />
-    <Input.Input />
-    <Input.Error />
-  </Input.Root>
+  <InputPrimitive.Root>
+    <InputPrimitive.Label />
+    <InputPrimitive.Input />
+    <InputPrimitive.Error />
+  </InputPrimitive.Root>
 }
 ```
 
