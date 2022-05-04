@@ -1,6 +1,6 @@
 {
   "name": "@natural-forms/input",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Unstyled input component with built-in validation.",
   "license": "MIT",
   "author": "Douglas Moura <douglas.ademoura@gmail.com>",
