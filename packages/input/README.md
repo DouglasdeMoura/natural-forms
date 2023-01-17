@@ -11,7 +11,7 @@ event.
 - Fires a `onError` event when the input is invalid;
 - Fires a `onValidate` event when the input is valid;
 - Input's `name` and `id` attributes are automatically generated when not provided;
-- Compatible with any styling mwthod, as it exposes the HTML elements directly.
+- Compatible with any styling method, as it exposes the HTML elements directly.
 
 ## Installation
 
@@ -30,15 +30,15 @@ yarn add @natural-forms/input
 ## Anatomy
 
 ```tsx
-import * as InputPrimitive from '@natural-forms/input'
+import * as InputPrimitive from "@natural-forms/input";
 
 export default () => {
   <InputPrimitive.Root>
     <InputPrimitive.Label />
     <InputPrimitive.Input />
     <InputPrimitive.Error />
-  </InputPrimitive.Root>
-}
+  </InputPrimitive.Root>;
+};
 ```
 
 Please refer to the [tests](https://github.com/DouglasdeMoura/natural-forms/blob/main/packages/input/src/input.spec.tsx) file
